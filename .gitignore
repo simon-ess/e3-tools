@@ -3,7 +3,6 @@
 *\#*
 e3-*
 .MODULE_LOG
-*.Makefile
 index.html
 *toolchain-*.sh
 cc_setup/toolchain/
