@@ -52,10 +52,10 @@ declare -g  _E3_MODULE_GITURL_FULL=""
 declare -r _TEMPLATE_DIR="${SC_TOP}/templates/"
 
 . ${SC_TOP}/.e3_common_functions
+. ${SC_TOP}/.e3_template_functions
 . ${SC_TOP}/.e3_example_functions
 . ${SC_TOP}/.e3_siteMods_functions
 . ${SC_TOP}/.e3_siteApps_functions
-. ${SC_TOP}/.e3_template_functions
 
 
 
