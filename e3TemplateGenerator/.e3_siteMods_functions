@@ -40,7 +40,6 @@ function add_CONFIG_siteMods
     create_file_from_template "${_TEMPLATE_DIR}CONFIG" "CONFIG" ""
 }
 
-
 function add_CONFIG_siteMods_local
 {
     create_file_from_template "${_TEMPLATE_DIR}CONFIG_local" "CONFIG" ""
@@ -48,7 +47,8 @@ function add_CONFIG_siteMods_local
 
 function add_CONFIG_MODULE_siteMods
 {
-    create_file_from_template "${_TEMPLATE_DIR}CONFIG_MODULE" "CONFIG_MODULE" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH"
+    local _INCLUDE_MODULE=""
+    create_file_from_template "${_TEMPLATE_DIR}CONFIG_MODULE" "CONFIG_MODULE" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH _INCLUDE_MODULE"
 }
 
 function add_CONFIG_MODULE_DEV_siteMods
@@ -68,46 +68,9 @@ function add_RULES_siteMods_local
 
 function add_CONFIG_MODULE_siteMods_localexample
 {
-
-       cat > CONFIG_MODULE <<EOF
-#
-EPICS_MODULE_NAME:=${_EPICS_MODULE_NAME}
-
-EPICS_MODULE_TAG:=master
-#
-E3_MODULE_VERSION:=master
-
-# DEPENDENT MODULE VERSION
-# For Example, 
-#DEVLIB2_DEP_VERSION:=2.9.0
-#ASYN_DEP_VERSION:=4.36.0
-#PCRE_DEP_VERSION:=8.41.0
-#ADCORE_DEP_VERSION:=3.7.0
-#ADSUPPORT_DEP_VERSION:=1.9.0
-#LOKI_DEP_VERSION=1.0.0
-#NDS_DEP_VERSION=2.3.3
-#SIS8300DRV_DEP_VERSION=4.3.1
-SEQUENCER_DEP_VERSION=2.2.7
-#
-# 
-#E3_KMOD_SRC_PATH:=\$(E3_MODULE_SRC_PATH)
-#
-# In most case, we don't need to touch the following variables.
-#
-
-E3_MODULE_NAME:=\$(EPICS_MODULE_NAME)
-E3_MODULE_SRC_PATH:=${_E3_MODULE_SRC_PATH}
-E3_MODULE_MAKEFILE:=\$(EPICS_MODULE_NAME).Makefile
-
-
--include \$(TOP)/configure/CONFIG_OPTIONS
-# The definitions shown below can also be placed in an untracked CONFIG_MODULE.local
--include \$(TOP)/configure/CONFIG_MODULE.local
-
-EOF
+    local _INCLUDE_MODULE="SEQUENCER_DEP_VERSION:=2.2.7"
+    create_file_from_template "${_TEMPLATE_DIR}CONFIG_MODULE" "CONFIG_MODULE" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH _INCLUDE_MODULE"
 }
-
-
 
 function add_configure_siteMods
 {
