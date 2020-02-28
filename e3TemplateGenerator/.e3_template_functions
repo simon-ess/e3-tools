@@ -65,41 +65,35 @@ function add_module_makefile {
 
     SC_MODULE=$1
 
-    create_file_from_template "${_TEMPLATE_DIR}module.Makefile" "${SC_MODULE}.Makefile" "SC_USER SC_HASH SC_MODULE SC_LOGDATE SC_SCRIPTNAME SC_CURYEAR"
+    create_file_from_template "${_TEMPLATE_DIR}/module.Makefile" "${SC_MODULE}.Makefile" "SC_USER SC_HASH SC_MODULE SC_LOGDATE SC_SCRIPTNAME SC_CURYEAR"
 }
 
 function add_gitignore
 {
-    create_file_from_template "${_TEMPLATE_DIR}template.gitignore" ".gitignore" "_E3_MODULE_SRC_PATH"
+    create_file_from_template "${_TEMPLATE_DIR}/template.gitignore" ".gitignore" "_E3_MODULE_SRC_PATH"
 }
 
 function add_e3_makefile
 {
-    create_file_from_template "${_TEMPLATE_DIR}e3.Makefile" "Makefile" "SC_LOGDATE SC_CURYEAR"
+    create_file_from_template "${_TEMPLATE_DIR}/e3.Makefile" "Makefile" "SC_LOGDATE SC_CURYEAR"
 }
 
 function add_patch
 {
     # These land in $(MODULE)/patch/Site
-    create_file_from_template "${_TEMPLATE_DIR}patch-README.md" "README.md" ""
-    create_file_from_template "${_TEMPLATE_DIR}HISTORY.md" "HISTORY.md" ""
+    create_file_from_template "${_TEMPLATE_DIR}/patch-README.md" "README.md" ""
+    create_file_from_template "${_TEMPLATE_DIR}/HISTORY.md" "HISTORY.md" ""
 }
 
 function add_CONFIG_OPTIONS
 {
-    create_file_from_template "${_TEMPLATE_DIR}CONFIG_OPTIONS" "CONFIG_OPTIONS" ""
+    create_file_from_template "${_TEMPLATE_DIR}/CONFIG_OPTIONS" "CONFIG_OPTIONS" ""
 }
 
 function add_RELEASE
 {
     local _SUFFIX=$1
-
-    echo ">>>>"
-    echo $_EPICS_BASE
-    echo ">>>>"
-
-
-    create_file_from_template "${_TEMPLATE_DIR}RELEASE" "RELEASE${_SUFFIX}" "_EPICS_BASE _E3_REQUIRE_NAME _E3_REQUIRE_VERSION _SUFFIX"
+    create_file_from_template "${_TEMPLATE_DIR}/RELEASE" "RELEASE${_SUFFIX}" "_EPICS_BASE _E3_REQUIRE_NAME _E3_REQUIRE_VERSION _SUFFIX"
 }
 
 function add_RELEASE_variables
@@ -127,12 +121,12 @@ function add_RELEASE_variables
 
 function add_rules_module
 {
-    create_file_from_template "${_TEMPLATE_DIR}RULES_MODULE" "RULES_MODULE" ""
+    create_file_from_template "${_TEMPLATE_DIR}/RULES_MODULE" "RULES_MODULE" ""
 }
 
 function add_rules_dkms_l
 {
-    create_file_from_template "${_TEMPLATE_DIR}RULES_DKMS_L" "RULES_DKMS_L" ""
+    create_file_from_template "${_TEMPLATE_DIR}/RULES_DKMS_L" "RULES_DKMS_L" ""
 }
 
 function add_configure_module

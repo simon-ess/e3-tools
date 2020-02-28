@@ -32,44 +32,44 @@
 
 function add_readme_siteMods
 {
-    create_file_from_template "${_TEMPLATE_DIR}README.md" "README.md" "_E3_MOD_NAME _EPICS_MODULE_NAME"
+    create_file_from_template "${_TEMPLATE_DIR}/README.md" "README.md" "_E3_MOD_NAME _EPICS_MODULE_NAME"
 }
 
 function add_CONFIG_siteMods
 {
-    create_file_from_template "${_TEMPLATE_DIR}CONFIG" "CONFIG" ""
+    create_file_from_template "${_TEMPLATE_DIR}/CONFIG" "CONFIG" ""
 }
 
 function add_CONFIG_siteMods_local
 {
-    create_file_from_template "${_TEMPLATE_DIR}CONFIG_local" "CONFIG" ""
+    create_file_from_template "${_TEMPLATE_DIR}/CONFIG_local" "CONFIG" ""
 }
 
 function add_CONFIG_MODULE_siteMods
 {
     local _INCLUDE_MODULE=""
-    create_file_from_template "${_TEMPLATE_DIR}CONFIG_MODULE" "CONFIG_MODULE" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH _INCLUDE_MODULE"
+    create_file_from_template "${_TEMPLATE_DIR}/CONFIG_MODULE" "CONFIG_MODULE" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH _INCLUDE_MODULE"
 }
 
 function add_CONFIG_MODULE_DEV_siteMods
 {
-    create_file_from_template "${_TEMPLATE_DIR}CONFIG_MODULE_DEV" "CONFIG_MODULE_DEV" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH _E3_MODULE_GITURL_FULL"
+    create_file_from_template "${_TEMPLATE_DIR}/CONFIG_MODULE_DEV" "CONFIG_MODULE_DEV" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH _E3_MODULE_GITURL_FULL"
 }
 
 function add_RULES_siteMods
 {
-    create_file_from_template "${_TEMPLATE_DIR}RULES" "RULES" ""
+    create_file_from_template "${_TEMPLATE_DIR}/RULES" "RULES" ""
 }
 
 function add_RULES_siteMods_local
 {
-    create_file_from_template "${_TEMPLATE_DIR}RULES_local" "RULES" ""
+    create_file_from_template "${_TEMPLATE_DIR}/RULES_local" "RULES" ""
 }
 
 function add_CONFIG_MODULE_siteMods_localexample
 {
     local _INCLUDE_MODULE="SEQUENCER_DEP_VERSION:=2.2.7"
-    create_file_from_template "${_TEMPLATE_DIR}CONFIG_MODULE" "CONFIG_MODULE" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH _INCLUDE_MODULE"
+    create_file_from_template "${_TEMPLATE_DIR}/CONFIG_MODULE" "CONFIG_MODULE" "_EPICS_MODULE_NAME _E3_MODULE_SRC_PATH _INCLUDE_MODULE"
 }
 
 function add_configure_siteMods

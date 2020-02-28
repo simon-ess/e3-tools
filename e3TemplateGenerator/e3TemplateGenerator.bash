@@ -49,7 +49,7 @@ declare -g  _E3_MOD_NAME=""
 declare -g  _E3_TGT_URL_FULL=""
 declare -g  _E3_MODULE_GITURL_FULL=""
 
-declare -r _TEMPLATE_DIR="${SC_TOP}/templates/"
+declare -r _TEMPLATE_DIR="${SC_TOP}/templates"
 
 . ${SC_TOP}/.e3_common_functions
 . ${SC_TOP}/.e3_template_functions
