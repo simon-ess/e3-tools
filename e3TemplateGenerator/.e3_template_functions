@@ -34,6 +34,10 @@ function create_file_from_template {
     output_file=$2
     vars=$3
 
+    if [ ! -f $template_file ]; then
+        die 1 "Template file does not exist."
+    fi
+
     tempfile=$(mktemp)
     if [ $? -ne 0 ]; then
         die 1 "Error creating temporary file."
